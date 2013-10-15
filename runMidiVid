@@ -1,0 +1,7 @@
+#! /bin/bash
+# run a.out and wait for midi
+
+#setterm -blank force
+cd /home/pi/videoMidiPi/
+./a.out
+

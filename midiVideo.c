@@ -1,4 +1,3 @@
-
 #include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>
@@ -17,29 +16,17 @@ int main(int argc, const char * argv[])
     
     numDevices = Pm_CountDevices();
     if (numDevices == 0) {
-        printf("No MIDI devices found.\n");
         return 0;
     }
     for (i = 0; i < numDevices; i++) {
         info = Pm_GetDeviceInfo(i);
         if (info->input) {
-            printf("%d: %s\n", i, info->name);
         }
     }
     
-//    printf("Select the MIDI device: ");
-//    scanf("%d", &selectedDeviceIndex);
     info = Pm_GetDeviceInfo(selectedDeviceIndex);
-//    printf("You chose \"%s\".\n", info->name);
     
     channel = 1;
-    //while (channel < 1 || channel > 16) {
-    //    printf("Please select a MIDI channel: ");
-    //    scanf("%ld", &channel);
-    //    if (channel < 1 || channel > 16) {
-    //        printf("Invalid channel.\n");
-    //    }
-    //}
     channel--;
     
     Pm_OpenInput(&stream,
@@ -70,6 +57,13 @@ int main(int argc, const char * argv[])
                 printf("CC: %ld, %ld\n", data1, data2);
             }
         }
+	
+	if (data1 == 25){
+		if (data2 == 127){
+		system("clear");
+		system("playMovie");
+		}
+	}
 }
     Pm_Close(stream);
     

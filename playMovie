@@ -1,0 +1,6 @@
+#! /bin/bash
+# run midi program
+
+#setterm -blank force
+cd /home/pi/videoMidiPi/
+omxplayer glitcher.mov
