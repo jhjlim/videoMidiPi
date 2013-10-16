@@ -2,6 +2,8 @@
 # run a.out and wait for midi
 
 #setterm -blank force
-cd /home/pi/videoMidiPi/
-./a.out
+echo "going to directory"
+cd /home/jhjl/videoMidiPi/
+echo "run program"
+sudo ./a.out
 

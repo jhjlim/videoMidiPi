@@ -2,5 +2,5 @@
 # run midi program
 
 #setterm -blank force
-cd /home/pi/videoMidiPi/
-omxplayer glitcher.mov
+cd /home/jhjl/videoMidiPi/
+sudo omxplayer glitcher.mov
