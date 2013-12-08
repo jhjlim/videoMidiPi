@@ -56,8 +56,13 @@ int main(int argc, const char * argv[])
                 printf("Note on: %ld, %ld\n", data1, data2);
             } else if (status == (0xB0 + channel)) {
                 printf("CC: %ld, %ld\n", data1, data2);
-            }
-        }
+        
+
+	    }
+        
+}
+		
+	
 	
 	if (data1 == 25){
 		if (data2 == 127){
@@ -65,6 +70,14 @@ int main(int argc, const char * argv[])
 		system("playMovie");
 		}
 	}
+	if(data1 == 26){
+		if(data2 == 127){
+		system("setterm -blank force");
+		}
+		if(data2 == 0){
+		system("setterm -blank poke");
+		}
+}
 }
     Pm_Close(stream);
     
